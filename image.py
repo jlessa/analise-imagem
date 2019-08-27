@@ -4,6 +4,7 @@ from PIL import Image
 img, pixels, width, height = [None, None, None, None]
 black_color = (0, 0, 0)
 white_color = (255, 255, 255)
+red_color = (255, 0, 0)
 
 
 def load_image(img_path):
@@ -57,3 +58,10 @@ def count_pixel(x):
 def distortion(x):
     #Resolução 960x1280
     print(f"DISTORÇÃO: {x} pixels ==> {x / 6.22} milímetros.")
+
+
+def red_mark(x, y, img_name, ext):
+    img.save(img_name + '_bw' + ext)
+    for i in range(x[0], y + 1):
+        pixels[i, x[1]] = red_color
+    img.save(img_name + '_bw_response' + ext)

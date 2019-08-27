@@ -2,19 +2,21 @@ import image as img
 # import OpenCV_image as img
 
 
-img_base = 'C:/Users/Yuri/Desktop/imagens/i2.jpeg'
-img_comparsion = 'C:/Users/Yuri/Desktop/imagens/i22.jpeg'
+img_base = 'C:/Users/Yuri/Desktop/imagens/i2'
+img_comparsion = 'C:/Users/Yuri/Desktop/imagens/i22'
+ext = '.jpeg'
 x = []
 pixels = []
 
 
 def main(imgs):
     for i in imgs:
-        img.load_image(i)
+        img.load_image(i + ext)
         pixel_left = img.find_pixel_left(img.width, img.height)
         pixel_right = img.find_pixel_right(pixel_left)
         x.append(img.count_pixel([pixel_left[0], pixel_right]))
         pixels.append([pixel_left, [pixel_right, pixel_left[1]]])
+        img.red_mark(pixel_left, pixel_right, i, ext)
     print_result()
 
 
@@ -34,4 +36,3 @@ def print_result():
 
 
 main([img_base, img_comparsion])
-# img.load_image(img_base)
