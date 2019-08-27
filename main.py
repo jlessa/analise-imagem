@@ -2,8 +2,8 @@ import image as img
 # import OpenCV_image as img
 
 
-img_base = 'C:/Users/Yuri/Desktop/imagens/i2'
-img_comparsion = 'C:/Users/Yuri/Desktop/imagens/i22'
+img_base = '.\\imagem\\completa'
+img_comparsion = '.\\imagem\\completa_dist'
 ext = '.jpeg'
 x = []
 pixels = []
